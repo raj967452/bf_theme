@@ -1,0 +1,7 @@
+<!--Order tracking UI DOM-->
+<h1>Borderfree Order Status</h1>
+<p>Borderfree orders placed as a guest or single order lookup</p>
+<div id="bfTTContainer"></div>
+
+<!--Order tracking tool JS-->
+<script src="https://tracking.stage.borderfree.com/public/js/merchants/borderfreeOrderTracking.min.js"></script>

@@ -1,0 +1,9 @@
+<!-- Your custom header here -->
+<!-- Envoy Checkout URL in iFrame tag -->
+<div class="borderFree">
+<iframe name="envoy" id="envoyId" src="{{model.envoyResponse.fullEnvoyUrl}}" frameBorder="0" scrolling="no" style="width: 100%;"></iframe>
+<!--Used to call Success, Failure or Pending URL -->
+<iframe id="__frame" width="0" height="0" frameborder="0" src="https://{{model.checkoutDomain.domain2}}.borderfree.com/utils/empty.jsp" ></iframe>
+<!-- Your custom footer here -->
+</div>
+<script type="text/javascript" src="https://{{model.checkoutDomain.domain1}}.borderfree.com/htmlcheckout/resources/js/merchant.js"></script>

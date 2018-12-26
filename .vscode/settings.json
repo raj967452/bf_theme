@@ -1,0 +1,7 @@
+{
+  "powermode.enabled": true,
+  "powermode.enableExplosions": true,
+  "powermode.comboThreshold": 1,
+  "powermode.enableStatusBarComboCounter": true,
+  "powermode.presets": "flames"
+}
