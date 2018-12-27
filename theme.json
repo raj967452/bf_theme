@@ -63,6 +63,11 @@
       "path": "categoryContent.js",
       "documentTypes": ["categoryContent@mozu"],
       "priority": 0.2
+    },
+    {
+      "id": "welcomeMatEditor",
+      "path": "welcomeMatEditor.js",
+      "priority": 0.2
     }
   ],
   "emailTemplates": [
@@ -1120,18 +1125,9 @@
       "validPageTypes": ["*"]
     },
     {
-      "defaultConfig": {
-        "title": "Welcome mat"
-      },
       "displayName": "Welcome mat",
       "displayTemplate": "misc/welcome-mat",
-      "editViewFields": [
-        {
-          "anchor": "100%",
-          "fieldLabel": "Title",
-          "xtype": "mz-input-text"
-        }
-      ],
+      "customEditor": "welcomeMatEditor",
       "icon": "/resources/admin/widgets/borderFree.png",
       "id": "welcomemat",
       "validPageTypes": ["*"]
