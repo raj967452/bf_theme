@@ -160,9 +160,9 @@ require([
       var d = new Date();
       d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
       var expires = "expires=" + d.toUTCString();
-      $.cookie(cname, cvalue, expires);
+      //$.cookie(cname, cvalue, expires);
       console.log("cookie saved!!");
-      //document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     },
     setCountry: function(e) {
       var self = this,
