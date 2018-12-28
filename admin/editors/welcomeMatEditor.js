@@ -9,17 +9,23 @@ Ext.widget({
             url: "/admin/app/entities/read?list=bfsettings@external&entityType=mzdb",
             method: 'get',
             success: function (res) {
-                var response = JSON.parse(res.responseText),
-                    siteIdIndex = 0;
+                var response = JSON.parse(res.responseText);
                 if (response.items.length > 0) {
-                    try {
-                        var countryCodeInput = me.down('#countrycode');
-                        var currencyCodeInput = me.down('#currencycode');
-                        countryCodeInput.setValue(response.items[0].item.bf_merchant_country_code);
-                        currencyCodeInput.setValue(response.items[0].item.bf_merchant_currency_code);                      
-                    } catch (e) {
-                        console.log(e);
-                    }
+                    var isValid = me.checkValidation(response.items[0].item);
+                    if (isValid) {
+                        try {
+                            var countryCodeInput = me.down('#countrycode');
+                            var currencyCodeInput = me.down('#currencycode');
+                            countryCodeInput.setValue(response.items[0].item.bf_merchant_country_code);
+                            currencyCodeInput.setValue(response.items[0].item.bf_merchant_currency_code);                      
+                        } catch (e) {
+                            console.log(e);
+                        }
+                        console.log("ree");
+                    }else{
+                        var errormessage = me.down('#errormessage');
+                        errormessage.setVisible(true);    
+                    }                    
                 } else {
                     var errormessage = me.down('#errormessage');
                     errormessage.setVisible(true);
@@ -56,5 +62,15 @@ Ext.widget({
 
         }];
         this.superclass.initComponent.apply(this, arguments);
+    },
+    checkValidation: function(configData) {
+      var isValid = true;
+      for (var i in configData) {
+        if (!configData[i]) {
+          isValid = false;
+          break;
+        }
+      }
+      return isValid;
     }
 });

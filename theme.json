@@ -68,6 +68,11 @@
       "id": "welcomeMatEditor",
       "path": "welcomeMatEditor.js",
       "priority": 0.2
+    },
+    {
+      "id": "borderFreeOrderTrackingEditor",
+      "path": "borderFreeOrderTrackingEditor.js",
+      "priority": 0.2
     }
   ],
   "emailTemplates": [
@@ -696,10 +701,10 @@
     "useSearchAutocomplete": true,
     "allowCustomerInitiatedReturns": true,
     "visaCheckoutSdkUrl": "https://sandbox-assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js",
-    "enableborderFree":false,
-    "merchantId":"",
-    "borderFreeUsername":"",
-    "borderFreePassword":""
+    "enableborderFree": false,
+    "merchantId": "",
+    "borderFreeUsername": "",
+    "borderFreePassword": ""
   },
   "layoutWidgets": [
     {
@@ -1133,18 +1138,9 @@
       "validPageTypes": ["*"]
     },
     {
-      "defaultConfig": {
-        "title": "BorderFree Order Tracking"
-      },
       "displayName": "BorderFree Order Tracking",
       "displayTemplate": "misc/border-free-order-tracking",
-      "editViewFields": [
-        {
-          "anchor": "100%",
-          "fieldLabel": "Title",
-          "xtype": "mz-input-text"
-        }
-      ],
+      "customEditor": "borderFreeOrderTrackingEditor",
       "icon": "/resources/admin/widgets/borderFree.png",
       "id": "borderfreeordertracking",
       "validPageTypes": ["*"]
